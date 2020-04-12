@@ -7,7 +7,7 @@ corp104_blackbox_exporter::service_name: 'blackbox-exporter'
 corp104_blackbox_exporter::service_enable: true
 corp104_blackbox_exporter::extra_options: ~
 corp104_blackbox_exporter::install_method: 'url'
-corp104_blackbox_exporter::version: '0.5.0'
+corp104_blackbox_exporter::version: '0.16.0'
 corp104_blackbox_exporter::bin_dir: '/usr/local/bin'
 corp104_blackbox_exporter::http_proxy: ~
 corp104_blackbox_exporter::manage_user: true
