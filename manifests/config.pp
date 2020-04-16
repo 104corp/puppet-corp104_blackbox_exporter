@@ -6,7 +6,7 @@ class corp104_blackbox_exporter::config inherits corp104_blackbox_exporter {
     notify  => Class['corp104_blackbox_exporter::service']
   }
 
-  file { $config_file:
+  file { $corp104_blackbox_exporter::blackbox_exporter_yml:
     ensure  => present,
     owner   => $user,
     group   => $group,
