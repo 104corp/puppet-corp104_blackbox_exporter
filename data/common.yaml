@@ -17,3 +17,4 @@ corp104_blackbox_exporter::group: 'blackbox-exporter'
 corp104_blackbox_exporter::extra_groups: ~
 corp104_blackbox_exporter::http_proxy: ~
 corp104_blackbox_exporter::init_style: '%{facts.service_provider}'
+corp104_blackbox_exporter::config::MONITOR_TYPE: 'icmp'

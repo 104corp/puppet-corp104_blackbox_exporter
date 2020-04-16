@@ -65,8 +65,10 @@ class corp104_blackbox_exporter (
   Hash[String, Scalar] $env_vars = {},
 ){
   contain corp104_blackbox_exporter::install
+  contain corp104_blackbox_exporter::config
   contain corp104_blackbox_exporter::service
 
   Class['::corp104_blackbox_exporter::install']
+  ~> Class['::corp104_blackbox_exporter::config']
   ~> Class['::corp104_blackbox_exporter::service']
 }

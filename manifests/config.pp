@@ -5,7 +5,7 @@ class blackbox::config {
     owner   => $user,
     group   => $group,
     mode    => $config_mode,
-    content => template('prometheus/blackbox_exporter.yaml.erb'),
-    notify  => $notify_service,
+    content => template('corp104_blackbox_exporter/blackbox_exporter.yaml.erb'),
+#    notify  => $notify_service,
   }
 }
