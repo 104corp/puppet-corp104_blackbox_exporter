@@ -7,11 +7,7 @@ class corp104_blackbox_exporter::config inherits corp104_blackbox_exporter {
   }
 
   file { $corp104_blackbox_exporter::blackbox_exporter_yml:
-    ensure  => present,
-    owner   => $user,
-    group   => $group,
-    mode    => $config_mode,
+    ensure  => file,
     content => template('corp104_blackbox_exporter/blackbox_exporter.yaml.erb'),
-#    notify  => $notify_service,
   }
 }
