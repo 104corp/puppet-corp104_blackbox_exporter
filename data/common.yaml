@@ -4,6 +4,7 @@ corp104_blackbox_exporter::package_ensure: 'present'
 corp104_blackbox_exporter::package_name: 'blackbox_exporter'
 corp104_blackbox_exporter::service_ensure: 'running'
 corp104_blackbox_exporter::service_name: 'blackbox-exporter'
+corp104_blackbox_exporter::service_yaml: 'blackbox.yml'
 corp104_blackbox_exporter::service_enable: true
 corp104_blackbox_exporter::extra_options: ~
 corp104_blackbox_exporter::install_method: 'url'

@@ -32,6 +32,11 @@ class corp104_blackbox_exporter::install inherits corp104_blackbox_exporter {
           notify => Service['blackbox-exporter'],
           target => "/opt/${corp104_blackbox_exporter::package_name}-${corp104_blackbox_exporter::version}.linux-${os_arch}/${corp104_blackbox_exporter::package_name}",
       }
+      -> file { "${corp104_blackbox_exporter::bin_dir}/${corp104_blackbox_exporter::service_yaml}":
+          ensure => link,
+          notify => Service['blackbox-exporter'],
+          target => "/opt/${corp104_blackbox_exporter::package_name}-${corp104_blackbox_exporter::version}.linux-${os_arch}/${corp104_blackbox_exporter::service_yaml}",
+      }
     }
     'package': {
       package { $corp104_blackbox_exporter::package_name:
