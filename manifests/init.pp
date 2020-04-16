@@ -53,6 +53,7 @@ class corp104_blackbox_exporter (
   String $package_name,
   String $service_ensure,
   String $service_name,
+  String $service_yaml,
   Boolean $service_enable,
   Optional[String] $http_proxy,
   Boolean $manage_user,
