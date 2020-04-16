@@ -8,6 +8,7 @@ class corp104_blackbox_exporter::config inherits corp104_blackbox_exporter {
 
   file { $corp104_blackbox_exporter::blackbox_exporter_yml:
     ensure  => file,
-    content => template('corp104_blackbox_exporter/blackbox_exporter.yaml.erb'),
+    content => template("${module_name}/blackbox_exporter.yaml.erb"),
   }
+  
 }
