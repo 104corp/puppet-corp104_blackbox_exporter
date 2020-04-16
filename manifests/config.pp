@@ -1,4 +1,10 @@
-class blackbox::config {
+class corp104_blackbox_exporter::config inherits corp104_blackbox_exporter {
+  File {
+    owner   => 'root',
+    group   => 'root',
+    require => Class['corp104_blackbox_exporter::install'],
+    notify  => Class['corp104_blackbox_exporter::service']
+  }
 
   file { $config_file:
     ensure  => present,
