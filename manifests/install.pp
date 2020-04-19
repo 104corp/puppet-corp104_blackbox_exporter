@@ -67,8 +67,8 @@ class corp104_blackbox_exporter::install inherits corp104_blackbox_exporter {
   }
 
   # manage init type
-  if $corp104_blackbox_exporter::init_style {
-    case $corp104_blackbox_exporter::init_style {
+  if $osfamily {
+    case $osfamily {
       'upstart' : {
         file { "/etc/init/${corp104_blackbox_exporter::package_name}.conf":
           mode    => '0444',
