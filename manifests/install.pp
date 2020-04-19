@@ -132,9 +132,9 @@ class corp104_blackbox_exporter::install inherits corp104_blackbox_exporter {
           notify  => Service['blackbox-exporter'],
         }
       }
-      default : {
-        fail("I don't know how to create an init script for style ${corp104_blackbox_exporter::init_style}")
-      }
+#      default : {
+#        fail("I don't know how to create an init script for style ${corp104_blackbox_exporter::init_style}")
+#      }
     }
   }
 
