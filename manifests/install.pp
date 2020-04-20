@@ -20,6 +20,7 @@ class corp104_blackbox_exporter::install inherits corp104_blackbox_exporter {
         creates         => "/opt/${corp104_blackbox_exporter::package_name}-${corp104_blackbox_exporter::version}.linux-${os_arch}/${corp104_blackbox_exporter::package_name}",
         cleanup         => true,
         proxy_server    => $corp104_blackbox_exporter::http_proxy,
+        before => systemd::unit_file {"${corp104_blackbox_exporter::service_name}.service",
       }
 
       file { "/opt/${corp104_blackbox_exporter::package_name}-${corp104_blackbox_exporter::version}.linux-${os_arch}/${corp104_blackbox_exporter::package_name}":
@@ -90,6 +91,7 @@ class corp104_blackbox_exporter::install inherits corp104_blackbox_exporter {
         systemd::unit_file {"${corp104_blackbox_exporter::service_name}.service":
           content => template("${module_name}/daemon.systemd.erb"),
           notify  => Service['blackbox-exporter'],
+          require => Archive['/tmp/${corp104_blackbox_exporter::package_name}-${corp104_blackbox_exporter::version}.tar.gz'],
         }
       }
       'sysv' : {
