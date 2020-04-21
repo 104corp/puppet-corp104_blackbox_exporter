@@ -1,6 +1,12 @@
 class corp104_blackbox_exporter::install inherits corp104_blackbox_exporter {
 
   $options = "--config.file=/opt/${corp104_blackbox_exporter::package_name}-${corp104_blackbox_exporter::version}.linux-${os_arch}/${corp104_blackbox_exporter::service_yaml}"
+  $os_arch = $facts['architecture'] ? {
+    'i386'   => '386',
+    'x86_64' => 'amd64',
+    'amd64'  => 'amd64',
+    default  => 'amd64',
+  }
 
   # install
   case $corp104_blackbox_exporter::install_method {
