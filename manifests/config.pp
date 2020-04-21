@@ -7,7 +7,7 @@ class corp104_blackbox_exporter::config (
     require => Class['corp104_blackbox_exporter::install'],
     notify  => Class['corp104_blackbox_exporter::service']
   }
-  $config_path = "${corp104_blackbox_exporter::config_dir}/blackbox.yaml"
+  $config_path = "${corp104_blackbox_exporter::config_dir}/${corp104_blackbox_exporter::service_yaml}"
   if $corp104_blackbox_exporter::config_dir {
     file { "${corp104_blackbox_exporter::config_dir}":
       ensure => directory,
