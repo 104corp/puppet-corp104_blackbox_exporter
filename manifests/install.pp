@@ -92,7 +92,7 @@ class corp104_blackbox_exporter::install inherits corp104_blackbox_exporter {
           content => template("${module_name}/daemon.systemd.erb"),
           notify  => Service['blackbox-exporter'],
           require => File["${corp104_blackbox_exporter::bin_dir}/${corp104_blackbox_exporter::service_name}"],
-          fail("systemd")
+          fail => ("systemd")
         }
       }
       'sysv' : {
