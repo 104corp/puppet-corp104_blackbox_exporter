@@ -1,5 +1,5 @@
 class corp104_blackbox_exporter::config (
-  Optional[Hash] $monitor_type,
+  Optional[Hash] $blackbox_message,
 ) inherits corp104_blackbox_exporter {
   File {
     owner   => 'root',
