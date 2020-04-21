@@ -18,5 +18,5 @@ corp104_blackbox_exporter::group: 'blackbox-exporter'
 corp104_blackbox_exporter::extra_groups: ~
 corp104_blackbox_exporter::http_proxy: ~
 corp104_blackbox_exporter::init_style: '%{facts.service_provider}'
-corp104_blackbox_exporter::config::config_path: '/etc/blackbox_exporter/blackbox.yml'
+corp104_blackbox_exporter::config_dir: '/etc/blackbox_exporter'
 corp104_blackbox_exporter::config::monitor_type: 'icmp'
