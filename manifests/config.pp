@@ -11,7 +11,7 @@ class corp104_blackbox_exporter::config (
   if "${corp104_blackbox_exporter::config_dir}" {
     file { "${corp104_blackbox_exporter::config_dir}":
       ensure => directory,
-      before => File["${config_path}"].
+      before => File["${config_path}"],
     }
   }
 
