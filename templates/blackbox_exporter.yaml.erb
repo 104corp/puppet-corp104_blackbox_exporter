@@ -1,2 +1,4 @@
 ---
-<%= @blackbox_message %>
+<% require 'yaml' -%>
+<% full_config = { 'modules'=>@blackbox_message } -%>
+<%= full_config.to_yaml -%>
