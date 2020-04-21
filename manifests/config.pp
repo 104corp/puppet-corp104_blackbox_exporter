@@ -1,7 +1,9 @@
 class corp104_blackbox_exporter::config (
   String $monitor_type,
   String $config_dir,
+  String $config_path,
 ) inherits corp104_blackbox_exporter {
+  $config_path = "${config_dir}/${corp104_blackbox_exporter::service_yaml}"
   File {
     owner   => 'root',
     group   => 'root',
