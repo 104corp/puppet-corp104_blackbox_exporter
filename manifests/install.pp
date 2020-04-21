@@ -1,6 +1,6 @@
 class corp104_blackbox_exporter::install inherits corp104_blackbox_exporter {
 
-  $options = "-scrape_uri=\"${corp104_blackbox_exporter::scrape_uri}\" ${corp104_blackbox_exporter::extra_options}"
+  $options = "--config.file=${corp104_blackbox_exporter::blackbox_exporter_yml}"
   $os_arch = $facts['architecture'] ? {
     'i386'   => '386',
     'x86_64' => 'amd64',
