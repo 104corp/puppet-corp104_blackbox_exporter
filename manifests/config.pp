@@ -1,5 +1,6 @@
 class corp104_blackbox_exporter::config (
   String $monitor_type,
+  String $config_dir,
 ) inherits corp104_blackbox_exporter {
   File {
     owner   => 'root',
@@ -8,8 +9,8 @@ class corp104_blackbox_exporter::config (
     notify  => Class['corp104_blackbox_exporter::service']
   }
 
-  if $corp104_blackbox_exporter::config::config_dir {
-    file { "${corp104_blackbox_exporter::config::config_dir}":
+  if $config_dir {
+    file { "${config_dir}":
       ensure => directory,
       before => File["${config_path}"],
     }
@@ -18,7 +19,7 @@ class corp104_blackbox_exporter::config (
   file { $config_path:
     ensure  => file,
     content => template("${module_name}/blackbox_exporter.yaml.erb"),
-    require => File["${corp104_blackbox_exporter::config_dir}"],
+    require => File["${config_dir}"],
   }
 
 }
