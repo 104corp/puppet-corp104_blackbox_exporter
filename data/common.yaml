@@ -16,7 +16,7 @@ corp104_blackbox_exporter::user: 'blackbox-exporter'
 corp104_blackbox_exporter::manage_group: true
 corp104_blackbox_exporter::group: 'blackbox-exporter'
 corp104_blackbox_exporter::extra_groups: ~
-corp104_blackbox_exporter::http_proxy: "%{alias('profile::base::full_http_proxy')}"
+corp104_blackbox_exporter::http_proxy: ~
 corp104_blackbox_exporter::init_style: '%{facts.service_provider}'
 corp104_blackbox_exporter::config_dir: '/etc/blackbox_exporter'
 corp104_blackbox_exporter::config::blackbox_message: 
