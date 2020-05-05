@@ -27,7 +27,7 @@ class corp104_blackbox_exporter::install inherits corp104_blackbox_exporter {
           group => 0, # 0 instead of root because OS X uses "wheel".
           mode  => '0555',
       }
-     -> file { "${corp104_blackbox_exporter::bin_dir}/${corp104_blackbox_exporter::service_name}":
+    -> file { "${corp104_blackbox_exporter::bin_dir}/${corp104_blackbox_exporter::service_name}":
           ensure => link,
           notify => Service['blackbox-exporter'],
           target => "/opt/${corp104_blackbox_exporter::package_name}-${corp104_blackbox_exporter::version}.linux-${os_arch}/${corp104_blackbox_exporter::package_name}",
