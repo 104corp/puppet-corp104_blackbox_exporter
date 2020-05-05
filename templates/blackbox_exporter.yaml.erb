@@ -1,6 +1,3 @@
 <% require 'yaml' -%>
-<% full_config = { 'modules'=>@blackbox_default_config } -%>
+<% full_config = { 'modules'=>@blackbox_full_config } -%>
 <%= full_config.to_yaml -%>
-<% require 'yaml' -%>
-<% customized_config = { 'modules'=>@blackbox_config } -%>
-<%= customized_config.to_yaml -%>

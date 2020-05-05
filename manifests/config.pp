@@ -6,6 +6,8 @@ class corp104_blackbox_exporter::config inherits corp104_blackbox_exporter {
     notify  => Class['corp104_blackbox_exporter::service']
   }
   $config_path = "${corp104_blackbox_exporter::config_dir}/${corp104_blackbox_exporter::service_yaml}"
+  $blackbox_full_config = $corp104_blackbox_exporter::blackbox_default_config + $corp104_blackbox_exporter::blackbox_config
+
   if $corp104_blackbox_exporter::config_dir {
     file { "${corp104_blackbox_exporter::config_dir}":
       ensure => directory,
