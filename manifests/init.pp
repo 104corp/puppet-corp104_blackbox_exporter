@@ -65,7 +65,8 @@ class corp104_blackbox_exporter (
   String $env_file_path,
   String $config_dir,
   Hash[String, Scalar] $env_vars = {},
-  Optional[Hash] $blackbox_message,
+  Optional[Hash] $blackbox_default_config,
+  Optional[Hash] $blackbox_config,
 ){
   contain corp104_blackbox_exporter::install
   contain corp104_blackbox_exporter::config
