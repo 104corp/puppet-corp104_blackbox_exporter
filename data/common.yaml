@@ -19,6 +19,7 @@ corp104_blackbox_exporter::extra_groups: ~
 corp104_blackbox_exporter::http_proxy: ~
 corp104_blackbox_exporter::init_style: '%{facts.service_provider}'
 corp104_blackbox_exporter::config_dir: '/etc/blackbox_exporter'
+corp104_blackbox_exporter::blackbox_config: ~
 corp104_blackbox_exporter::blackbox_default_config: 
   'modules':
   'http_post_2xx':
