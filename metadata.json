@@ -1,7 +1,7 @@
 {
   "name": "104corp-corp104_blackbox_exporter",
   "description": "corp104_blackbox_exporter Module for Debian and Ubuntu.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "104corp",
   "summary": "Install, deploysm, and configures blackbox_exporter.",
   "license": "blackbox-2.0",

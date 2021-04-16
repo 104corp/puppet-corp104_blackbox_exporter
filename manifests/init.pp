@@ -43,7 +43,6 @@
 # Copyright 2017 Your name here, unless otherwise noted.
 #
 class corp104_blackbox_exporter (
-  String $scrape_uri,
   Optional[String] $extra_options,
   Optional[String] $download_url,
   String $install_method,
